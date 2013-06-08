@@ -6,11 +6,26 @@
 
 // TODO: Tab
 
-// TODO: Tooltip
+ko.bindingHandlers.tooltip = {
+    defaults: {},
+    init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+        var options = ko.utils.unwrapObservable(valueAccessor() || {});
+        var settings = $.extend({}, ko.bindingHandlers.tooltip.defaults, options);
+        $(element).tooltip(settings);
+    }
+};
 
 // TODO: Popover
 
-// TODO: Alert
+ko.bindingHandlers.alert = {
+    defaults: {},
+    init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+        var options = ko.utils.unwrapObservable(valueAccessor() || {});
+        var settings = $.extend({}, ko.bindingHandlers.alert.defaults, options);
+        $(element).alert(settings);
+    }
+}
+
 
 // TODO: Button
 

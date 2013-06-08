@@ -8,16 +8,20 @@
     <div class="container">
         <h1 data-bind="text: Title"></h1>
 
+        <h2>Tooltip</h2>
+        <p><a href="#" data-bind="tooltip: { title: tt_Text1 }">Hover me 1</a></p>
+        <p><a href="#" data-bind="tooltip: { title: tt_Text2 }">Hover me 2</a></p>
+        <hr />
+
+        <h2>Alert</h2>
+        <p class="alert" data-bind="alert: {  }">Alert 1<a class="close" data-dismiss="alert" href="#">&times;</a></p>
+        <p class="alert" data-bind="alert: {  }">Alert 2<a class="close" data-dismiss="alert" href="#">&times;</a></p>
+        <hr />
+
         <h2>Typeahead</h2>
-        <p>
-            Data: <i data-bind="text: ta_List1"></i>
-        </p>
-        <p>
-            <input type="text" data-bind="typeahead: { source: ta_List1 }" />
-        </p>
-        <p>
-            <input type="text" data-bind="typeahead: { source: ta_List2() }"  />
-        </p>
+        <p>Data: <i data-bind="text: ta_List1"></i></p>
+        <p><input type="text" data-bind="typeahead: { source: ta_List1 }" /></p>
+        <p><input type="text" data-bind="typeahead: { source: ta_List2() }"  /></p>
         <hr />
 
     </div>
