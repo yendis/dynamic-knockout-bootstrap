@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="../lib/bootstrap/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container">
+        <h1 data-bind="text: Title"></h1>
+
+        <h2>Typeahead</h2>
+        <p>
+            Data: <i data-bind="text: ta_List1"></i>
+        </p>
+        <p>
+            <input type="text" data-bind="typeahead: { source: ta_List1 }" />
+        </p>
+        <p>
+            <input type="text" data-bind="typeahead: { source: ta_List2() }"  />
+        </p>
+        <hr />
+
+    </div>
+
+    <script src="../lib/jquery-2.0.2.min.js"></script>
+    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../lib/knockout-2.2.1.js"></script>
+    <script src="../src/dynamic-knockout-bootstrap.js"></script>
+    <script src="test.js"></script>
+</body>
+</html>
