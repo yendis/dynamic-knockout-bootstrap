@@ -1,4 +1,11 @@
-// TODO: Modal
+ko.bindingHandlers.modal = {
+    defaults: {},
+    init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+        var options = ko.utils.unwrapObservable(valueAccessor() || {});
+        var settings = $.extend({}, ko.bindingHandlers.modal.defaults, options);
+        $(element).modal(settings);
+    }
+};
 
 // TODO: Dropdown
 
@@ -15,7 +22,14 @@ ko.bindingHandlers.tooltip = {
     }
 };
 
-// TODO: Popover
+ko.bindingHandlers.popover = {
+    defaults: {},
+    init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+        var options = ko.utils.unwrapObservable(valueAccessor() || {});
+        var settings = $.extend({}, ko.bindingHandlers.popover.defaults, options);
+        $(element).popover(settings);
+    }
+};
 
 ko.bindingHandlers.alert = {
     defaults: {},
@@ -24,7 +38,7 @@ ko.bindingHandlers.alert = {
         var settings = $.extend({}, ko.bindingHandlers.alert.defaults, options);
         $(element).alert(settings);
     }
-}
+};
 
 
 // TODO: Button

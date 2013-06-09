@@ -8,9 +8,30 @@
     <div class="container">
         <h1 data-bind="text: Title"></h1>
 
+        <h2>Modal</h2>
+        <p>
+            <button class="btn" data-bind="click: showModal">Show modal</button>
+        </p>
+        <!-- ko if: mo_Content -->
+        <div class="modal" data-bind="modal: { }, with: mo_Content">
+            <h1 data-bind="text: title"></h1>
+            <p data-bind="text: content"></p>
+        </div>
+        <!-- /ko -->
+        <hr />
+
         <h2>Tooltip</h2>
         <p><a href="#" data-bind="tooltip: { title: tt_Text1 }">Hover me 1</a></p>
         <p><a href="#" data-bind="tooltip: { title: tt_Text2 }">Hover me 2</a></p>
+        <hr />
+
+        <h2>Popover</h2>
+        <p>
+            <button class="btn" data-bind="popover: { title: po_Title, content: po_Content, placement: 'top' }">Popover on top</button>
+            <button class="btn" data-bind="popover: { title: po_Title, content: po_Content, placement: 'right' }">Popover on right</button>
+            <button class="btn" data-bind="popover: { title: po_Title, content: po_Content, placement: 'bottom' }">Popover on bottom</button>
+            <button class="btn" data-bind="popover: { title: po_Title, content: po_Content, placement: 'left' }">Popover on left</button>
+        </p>
         <hr />
 
         <h2>Alert</h2>
@@ -30,6 +51,6 @@
     <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="../lib/knockout-2.2.1.js"></script>
     <script src="../src/dynamic-knockout-bootstrap.js"></script>
-    <script src="test.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
