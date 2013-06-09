@@ -7,9 +7,23 @@ ko.bindingHandlers.modal = {
     }
 };
 
-// TODO: Dropdown
+ko.bindingHandlers.dropdown = {
+    defaults: {},
+    init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+        var options = ko.utils.unwrapObservable(valueAccessor() || {});
+        var settings = $.extend({}, ko.bindingHandlers.dropdown.defaults, options);
+        $(element).dropdown(settings);
+    }
+};
 
-// TODO: Scrollspy
+//ko.bindingHandlers.scrollspy = {
+//    defaults: {},
+//    init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+//        var options = ko.utils.unwrapObservable(valueAccessor() || {});
+//        var settings = $.extend({}, ko.bindingHandlers.scrollspy.defaults, options);
+//        $(element).scrollspy(settings);
+//    }
+//};
 
 // TODO: Tab
 
@@ -48,7 +62,7 @@ ko.bindingHandlers.alert = {
 // TODO: Carousel
 
 ko.bindingHandlers.typeahead = {
-    defaults: { source: '', items: 10, minLength: 3 },
+    defaults: {},
     init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
         var options = ko.utils.unwrapObservable(valueAccessor() || {});
         var settings = $.extend({}, ko.bindingHandlers.typeahead.defaults, options);
